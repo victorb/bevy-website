@@ -1,0 +1,1149 @@
+
+
+
+  
+
+
+
+  
+  
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      
+      
+
+
+
+
+
+  
+    
+  
+
+
+
+  
+
+
+
+  
+    
+  
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Reviewing Pull Requests" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://bevyengine.org&#x2F;&#x2F;contributing&#x2F;helping-out&#x2F;reviewing-pull-requests&#x2F;" />
+    <meta property="og:image"
+          content="https://bevyengine.org/assets/bevy_logo_fill.png" />
+    <meta property="og:description"
+          content="Bevy is a refreshingly simple data-driven game engine built in Rust. It is free and open-source forever!" />
+    <link rel="shortcut icon" type="image/png" href="/assets/favicon.png">
+    <link rel="stylesheet" href="/site.css" />
+    <link href="/atom.xml" rel="alternate" type="application/atom+xml" />
+    
+
+    <title>Reviewing Pull Requests</title>
+    
+  
+
+  
+    
+    
+  
+    
+    
+      
+    
+  
+    
+    
+  
+
+  <script src="/optional-helpers.js"></script>
+  <script defer src="/on-this-page.js"></script>
+
+  </head>
+  <body>
+    <div class="layout">
+      <input id="mobile-menu-state" class="hidden" type="checkbox">
+      <header class="layout__header header print:hidden" data-mobile-menu-state-container>
+        <div class="header__content">
+          <label class="main-menu-backdrop" for="mobile-menu-state"></label>
+          <label class="header__hamburger button-square button-square--header"
+                  for="mobile-menu-state">
+            <img src="/assets/icon-hamburger.svg"
+                  alt="Three horizontal lines stacked on top of eachother"
+                  width="20"
+                  height="16">
+          </label>
+          <div class="header__left-block">
+            <a class="header__logo" href="/">
+              <img class="logo"
+                    src="/assets/bevy_logo_dark.svg"
+                    alt="Bevy Engine"
+                    width="520"
+                    height="130">
+            </a>
+            <div class="header__message">
+              
+  
+    
+      Contributing Guide
+    
+  
+
+            </div>
+          </div>
+          
+  <input id="page-menu-switch-state" class="hidden" type="checkbox" checked>
+
+          <nav class="header__menu main-menu main-menu--with-page-menu"
+                role="navigation"
+                data-page-menu-switch-state-container>
+            <div class="main-menu__header">
+              <a href="/">
+                <img class="logo"
+                      src="/assets/bevy_logo_dark.svg"
+                      alt="Bevy Engine"
+                      width="520"
+                      height="130">
+              </a>
+              <label class="button-square button-square--header" for="mobile-menu-state">
+                <img src="/assets/icon-times.svg"
+                      alt="A saltire or x-cross"
+                      width="16"
+                      height="16">
+              </label>
+            </div>
+            
+  <div class="main-menu__page-menu-switch">
+    <label class="menu-switch" for="page-menu-switch-state">
+      <div class="menu-switch__option menu-switch__option--main-menu">Main Menu</div>
+      <div class="menu-switch__option menu-switch__option--page-menu">
+        
+  
+  
+    
+      Contributing Guide
+    
+  
+
+
+      </div>
+    </label>
+  </div>
+
+            <div class="main-menu__content">
+              <div class="main-menu__page-menu">
+                
+  
+  <ul class="tree-menu">
+    
+    
+    
+      
+      
+    
+      
+      
+    
+    
+    
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;introduction&#x2F;">Introduction</a>
+      
+    </div>
+  </li>
+
+        
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <input id="mobile-menu-contributing-helping-out"
+            class="tree-menu__state"
+            type="checkbox"
+            checked>
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label tree-menu__label--with-chevron">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;">Helping out</a>
+      
+        <label class="tree-menu__toggle" for="mobile-menu-contributing-helping-out">
+          <img class="tree-menu__chevron"
+                src="/assets/icon-chevron-down.svg"
+                alt="A chevron, or V-shaped symbol"
+                width="15"
+                height="24">
+        </label>
+      
+      
+    </div>
+    
+      <ul class="tree-menu">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;how-you-can-help&#x2F;">How You Can Help</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;reporting-issues&#x2F;">Reporting Issues</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;opening-pull-requests&#x2F;">Opening Pull Requests</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <li class="tree-menu__item tree-menu__item--active">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;reviewing-pull-requests&#x2F;">Reviewing Pull Requests</a>
+      
+        
+<nav aria-label="On This Page" class="on-this-page tree-menu__toc">
+  
+  <ul>
+  
+    <li>
+      <a href="#who-can-review">Who can review</a>
+      
+    </li>
+  
+    <li>
+      <a href="#how-to-review-a-pull-request">How to review a Pull Request</a>
+      
+    </li>
+  
+    <li>
+      <a href="#giving-feedback">Giving feedback</a>
+      
+    </li>
+  
+    <li>
+      <a href="#requesting-changes">Requesting changes</a>
+      
+    </li>
+  
+    <li>
+      <a href="#dealing-with-disagreements">Dealing with disagreements</a>
+      
+    </li>
+  
+    <li>
+      <a href="#what-to-review">What to review</a>
+      
+    </li>
+  
+  </ul>
+</nav>
+
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;writing-docs&#x2F;">Writing Documentation</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;creating-examples&#x2F;">Creating Examples</a>
+      
+    </div>
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+        
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <input id="mobile-menu-contributing-reference"
+            class="tree-menu__state"
+            type="checkbox"
+            >
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label tree-menu__label--with-chevron">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;reference&#x2F;">Reference</a>
+      
+        <label class="tree-menu__toggle" for="mobile-menu-contributing-reference">
+          <img class="tree-menu__chevron"
+                src="/assets/icon-chevron-down.svg"
+                alt="A chevron, or V-shaped symbol"
+                width="15"
+                height="24">
+        </label>
+      
+      
+    </div>
+    
+      <ul class="tree-menu">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;reference&#x2F;triage&#x2F;">Triage</a>
+      
+    </div>
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+        
+      
+    
+  </ul>
+
+
+              </div>
+              <ul class="main-menu__menu">
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry main-menu__entry--getting-started">
+    <a href="&#x2F;learn&#x2F;quick-start&#x2F;getting-started" class="main-menu__link">
+      <span>Getting Started</span>
+    </a>
+  </li>
+
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry ">
+    <a href="&#x2F;learn" class="main-menu__link">
+      <span>Learn</span>
+    </a>
+  </li>
+
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry ">
+    <a href="&#x2F;news" class="main-menu__link">
+      <span>News</span>
+    </a>
+  </li>
+
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry ">
+    <a href="&#x2F;community" class="main-menu__link">
+      <span>Community</span>
+    </a>
+  </li>
+
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry ">
+    <a href="&#x2F;foundation" class="main-menu__link">
+      <span>Foundation</span>
+    </a>
+  </li>
+
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry ">
+    <a href="&#x2F;assets" class="main-menu__link">
+      <span>Assets</span>
+    </a>
+  </li>
+
+                
+  
+  
+  
+    
+  
+  
+  
+  
+  
+  <li class="main-menu__entry ">
+    <a href="&#x2F;examples" class="main-menu__link">
+      <span>Examples</span>
+    </a>
+  </li>
+
+                
+              </ul>
+            </div>
+          </nav>
+          <div class="header__cta-container">
+            <a class="button button--pink header__cta" href="/donate">Donate
+              <img class="button__icon"
+                    src="/assets/heart.svg"
+                    alt="heart icon"
+                    width="512"
+                    height="512" />
+            </a>
+            <a class="header__cta header__cta--github"
+                href="https://github.com/bevyengine/bevy">
+              <img src="/assets/github-mark-white.svg"
+                    alt="GitHub repo"
+                    width="98"
+                    height="96" />
+            </a>
+          </div>
+        </div>
+      </header>
+      <main class="layout__content">
+        <div class="container">
+          
+            
+  
+    
+    
+  
+    
+    
+  
+    
+    
+    
+      <h1 class="warning">This page is hidden because an ancestor is hidden</h1>
+    
+  
+
+  
+
+  
+
+          
+          
+  <div class="page-with-menu ">
+    <div class="page-with-menu__menu-wrapper print:hidden">
+      <div class="page-with-menu__menu">
+        
+  
+  <ul class="tree-menu">
+    
+    
+    
+      
+      
+    
+      
+      
+    
+    
+    
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;introduction&#x2F;">Introduction</a>
+      
+    </div>
+  </li>
+
+        
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <input id="page-menu-contributing-helping-out"
+            class="tree-menu__state"
+            type="checkbox"
+            checked>
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label tree-menu__label--with-chevron">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;">Helping out</a>
+      
+        <label class="tree-menu__toggle" for="page-menu-contributing-helping-out">
+          <img class="tree-menu__chevron"
+                src="/assets/icon-chevron-down.svg"
+                alt="A chevron, or V-shaped symbol"
+                width="15"
+                height="24">
+        </label>
+      
+      
+    </div>
+    
+      <ul class="tree-menu">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;how-you-can-help&#x2F;">How You Can Help</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;reporting-issues&#x2F;">Reporting Issues</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;opening-pull-requests&#x2F;">Opening Pull Requests</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <li class="tree-menu__item tree-menu__item--active">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;reviewing-pull-requests&#x2F;">Reviewing Pull Requests</a>
+      
+        
+<nav aria-label="On This Page" class="on-this-page tree-menu__toc">
+  
+  <ul>
+  
+    <li>
+      <a href="#who-can-review">Who can review</a>
+      
+    </li>
+  
+    <li>
+      <a href="#how-to-review-a-pull-request">How to review a Pull Request</a>
+      
+    </li>
+  
+    <li>
+      <a href="#giving-feedback">Giving feedback</a>
+      
+    </li>
+  
+    <li>
+      <a href="#requesting-changes">Requesting changes</a>
+      
+    </li>
+  
+    <li>
+      <a href="#dealing-with-disagreements">Dealing with disagreements</a>
+      
+    </li>
+  
+    <li>
+      <a href="#what-to-review">What to review</a>
+      
+    </li>
+  
+  </ul>
+</nav>
+
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;writing-docs&#x2F;">Writing Documentation</a>
+      
+    </div>
+  </li>
+
+          
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;helping-out&#x2F;creating-examples&#x2F;">Creating Examples</a>
+      
+    </div>
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+        
+      
+        
+          
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    <input id="page-menu-contributing-reference"
+            class="tree-menu__state"
+            type="checkbox"
+            >
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label tree-menu__label--with-chevron">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;reference&#x2F;">Reference</a>
+      
+        <label class="tree-menu__toggle" for="page-menu-contributing-reference">
+          <img class="tree-menu__chevron"
+                src="/assets/icon-chevron-down.svg"
+                alt="A chevron, or V-shaped symbol"
+                width="15"
+                height="24">
+        </label>
+      
+      
+    </div>
+    
+      <ul class="tree-menu">
+        
+          
+            
+  
+  
+  
+  
+  
+  
+  
+  <li class="tree-menu__item">
+    <div class="tree-menu__label">
+      <a class="tree-menu__link" href="&#x2F;contributing&#x2F;reference&#x2F;triage&#x2F;">Triage</a>
+      
+    </div>
+  </li>
+
+          
+        
+      </ul>
+    
+  </li>
+
+        
+      
+    
+  </ul>
+
+
+      </div>
+    </div>
+    <div class="page-with-menu__content">
+      
+  <div class="docs-page">
+    <div class="docs-content">
+      
+
+      
+      
+      
+      
+        
+      
+        
+      
+      
+      
+        
+        
+      
+        
+        
+          
+          
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+        
+        
+          
+          
+          
+          
+            
+            
+          
+        
+      
+
+      
+
+      
+      
+      
+      
+      
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+          
+          
+        
+        
+        
+          
+          
+          
+      <h1>
+        Reviewing Pull Requests
+        
+      </h1>
+      <div class="media-content">
+        <p>With the sheer volume of activity in Bevy's community, reviewing others' work with the aim of improving it is one of the most valuable things you can do.</p>
+<h2 id="who-can-review">Who can review</h2>
+<p>Anyone!</p>
+<p>You don't need to be an Elder Rustacean to be useful here: anyone can catch missing tests, unclear docs, logic errors, and so on. If you have specific skills (e.g., advanced familiarity with unsafe code, rendering knowledge or web development experience) or personal experience with a problem, try to prioritize those areas to ensure we can get appropriate expertise where we need it.</p>
+<p>If you find a PR that you don't feel comfortable reviewing, but you can think of someone who does, consider using GitHub's &quot;Request review&quot; functionality (in the top-right of the PR screen) to bring the work to their attention. If they're not a Bevy Org member, you'll need to ping them in the thread directly: that's fine too! Almost everyone working on Bevy is a volunteer; this should be treated as a gentle nudge, rather than an assignment of work. Consider checking the Git history for appropriate reviewers, or ask on Discord for suggestions.</p>
+<h2 id="how-to-review-a-pull-request">How to review a Pull Request</h2>
+<p>If you're new to GitHub, there's a lot of great information on the official <a href="https://docs.github.com/en/github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews">Pull Request Review documentation</a>. If you're happy with the work and feel you're reasonably qualified to assess quality in this particular area, leave your Approved review on the <em>PR</em>. Again, anyone can and should leave review— no special permissions are required!</p>
+<h2 id="giving-feedback">Giving feedback</h2>
+<p>Focus on giving constructive, actionable feedback that results in real improvements to code quality or end-user experience. If you don't understand why an approach was taken, please ask!</p>
+<p>Provide actual code suggestions when that is helpful. Small changes work well as comments or in-line suggestions on specific lines of codes. Larger changes deserve a comment in the main thread, or a pull request to the original author's branch (but please mention that you've made one). When in doubt about a matter of architectural philosophy, please refer back to <a href="https://bevyengine.org/contributing/introduction/#what-we-re-trying-to-build">What we're trying to build</a> for guidance.</p>
+<p>It's okay to leave an approval even if you aren't 100% confident on all areas of the PR: just be sure to note your limitations. When maintainers are evaluating the PR to be merged, they'll make sure that there's good coverage on all of the critical areas. If you can only check that the math is correct, and another reviewer can check everything but the math, we're in good shape!</p>
+<p>Similarly, if there are areas that would be good to fix, but aren't severe, please consider leaving an approval. The author can address them immediately, or spin it out into follow-up issues or PRs. Large PRs are much more draining for both reviewers and authors, so try to push for a smaller scope with clearly tracked follow-ups.</p>
+<h2 id="requesting-changes">Requesting changes</h2>
+<p>It is quite common for reviews to ask for additional changes, but as a reviewer it's important to be respectful of the author's time.</p>
+<p>It is always acceptable to ask an author to fix an issue or bug in their code, or request they do something differently. It is also fine to request additional documentation or tests, but when you do it's best to outline what exactly is lacking in the current version.</p>
+<p>Otherwise, please try to avoid asking for additional work unless absolutely necessary, especially if the PR is in an otherwise acceptable state. The purpose of an open source code review is to assess the code as it is, not to tell the author what to do.</p>
+<h2 id="dealing-with-disagreements">Dealing with disagreements</h2>
+<p>With the large number of contributors and reviewers collectively building a complex system, disagreements will inevitably occur. Regardless of whether the disagreement is about naming, performance, or code coverage, the goal should be to reach a compromise amicably.</p>
+<ul>
+<li><strong>Keep scope in mind</strong>. Trivial cleanup of surrounding area is okay to recommend, but don't expect a contributor to overhaul a portion of Bevy on their own.</li>
+<li><strong>Don't be afraid to escalate</strong>. Regardless of what side of the review process you're on, if you feel someone is being unreasonable don't hesitate to tag one of the maintainers or post in a related dev channel in the Discord.</li>
+<li><strong>Not all review comments will necessarily be addressed</strong>, and that's okay. Feel free to open an issue for further discussion.</li>
+</ul>
+<h2 id="what-to-review">What to review</h2>
+<p>There are three main places you can check for things to review:</p>
+<ol>
+<li>Pull requests which are ready and in need of more reviews on <a href="https://github.com/bevyengine/bevy/pulls?q=is%3Aopen+is%3Apr+-label%3AS-Ready-For-Final-Review+-draft%3A%3Atrue+-label%3AS-Needs-RFC+-reviewed-by%3A%40me+-author%3A%40me">bevy</a>.</li>
+<li>Pull requests on <a href="https://github.com/bevyengine/bevy/pulls">bevy</a> and the <a href="https://github.com/bevyengine/bevy-website/pulls">bevy-website</a> repos.</li>
+<li><a href="https://github.com/bevyengine/rfcs">RFCs</a>, which need extensive thoughtful community input on their design.</li>
+</ol>
+<p>Not even our Project Leads and Maintainers are exempt from reviews and RFCs! By giving feedback on this work (and related supporting work), you can help us make sure our releases are both high-quality and timely.</p>
+<p>Finally, if nothing brings you more satisfaction than seeing every last issue labeled and all resolved issues closed, feel free to message @alice-i-cecile or @cart for a Bevy org role to help us keep things tidy.</p>
+<p>As discussed in our <a href="https://bevyengine.org/contributing/helping-out/reviewing-pull-requests/TODO">Bevy Organization doc</a>, this role only requires good faith and a basic understanding of our development process.</p>
+
+        
+      </div>
+      <div class="docs-footer print:hidden">
+        <nav class="docs-footer__nav">
+          
+            <a class="docs-footer__link docs-footer__link--next"
+                href="&#x2F;contributing&#x2F;helping-out&#x2F;writing-docs&#x2F;"
+                data-docs-nav-next>
+              <div class="docs-footer__label">
+                <div class="docs-footer__dir">Next</div>
+                Writing Documentation
+              </div>
+              <i class="docs-footer__chevron icon icon--chevron-right"></i>
+            </a>
+          
+          
+            <a class="docs-footer__link docs-footer__link--prev"
+                href="&#x2F;contributing&#x2F;helping-out&#x2F;opening-pull-requests&#x2F;"
+                data-docs-nav-previous>
+              <div class="docs-footer__label">
+                <div class="docs-footer__dir">Previous</div>
+                Opening Pull Requests
+              </div>
+              <i class="docs-footer__chevron icon icon--chevron-left"></i>
+            </a>
+          
+        </nav>
+        <div class="docs-footer__edit-wrapper">
+          <a class="docs-footer__edit"
+              href="https://github.com/bevyengine/bevy-website/edit/main/content/contributing&#x2F;helping-out&#x2F;reviewing-pull-requests.md">
+            <i class="icon icon--pencil"></i>
+            Improve this page
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    </div>
+  </div>
+
+        </div>
+      </main>
+      <footer class="print:hidden">
+        
+        <div class="footer__social-container">
+          <a class="footer__social" href="https://github.com/bevyengine/bevy">
+            <img src="/assets/github-mark-white.svg"
+                  alt="Bevy engine's GitHub repo"
+                  width="32"
+                  height="32" />
+          </a>
+          <a class="footer__social" href="https://discord.gg/bevy">
+            <img src="/assets/discord.svg"
+                  alt="Bevy Discord server"
+                  width="32"
+                  height="32" />
+          </a>
+          <a class="footer__social" href="https://mastodon.social/@bevy">
+            <img src="/assets/mastodon-logo-purple.svg"
+                  alt="Bevy Mastodon account"
+                  width="32"
+                  height="32" />
+          </a>
+          <a class="footer__social" href="https://twitter.com/BevyEngine">
+            <img src="/assets/twitter.svg"
+                  alt="Bevy Twitter account"
+                  width="32"
+                  height="32" />
+          </a>
+          <a class="footer__social" href="https://www.reddit.com/r/bevy/">
+            <img src="/assets/reddit.svg"
+                  alt="Bevy subreddit"
+                  width="32"
+                  height="32" />
+          </a>
+          <a class="footer__social" href="/atom.xml">
+            <img src="/assets/feed.svg"
+                  alt="Bevy news feed"
+                  width="32"
+                  height="32" />
+          </a>
+        </div>
+      </footer>
+    </div>
+    <script>
+    const search_params = new URLSearchParams(window.location.search);
+    if (search_params.has("show_drafts") || document.cookie.indexOf("show_drafts") >= 0) {
+      if (search_params.get("show_drafts") === "0") {
+        document.cookie = "show_drafts=;path=/;expires=Thu, 01 Jan 1970 00:00:00 UTC";
+      } else {
+        document.cookie = "show_drafts=1;path=/"
+        document.body.classList.add('show_drafts');
+      }
+    }
+    </script>
+  </body>
+</html>
